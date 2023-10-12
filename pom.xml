@@ -14,7 +14,7 @@
     <parent>
         <groupId>ca.uhn.hapi.fhir</groupId>
         <artifactId>hapi-fhir</artifactId>
-        <version>6.8.3</version>
+        <version>6.9.9-SNAPSHOT</version>
     </parent>
 
     <artifactId>hapi-fhir-jpaserver-starter</artifactId>
@@ -24,11 +24,12 @@
         <java.version>11</java.version>
         <logback-classic.version>1.2.11</logback-classic.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
+        <start-class>ca.uhn.fhir.jpa.starter.Application</start-class>
     </properties>
 
-    <prerequisites>
+    <!-- <prerequisites>
         <maven>3.8.3</maven>
-    </prerequisites>
+    </prerequisites> -->
 
     <name>HAPI FHIR JPA Server - Starter Project</name>
 
@@ -166,17 +167,17 @@
 
         <!-- HAPI-FHIR uses Logback for logging support. The logback library is included automatically by Maven as a part of the hapi-fhir-base dependency, but you also need to include a logging library. Logback
             is used here, but log4j would also be fine. -->
-        <dependency>
+        <!-- <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-        </dependency>
+        </dependency> -->
 
         <!-- Needed for JEE/Servlet support -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
+				<groupId>jakarta.servlet</groupId>
+				<artifactId>jakarta.servlet-api</artifactId>
+				<scope>provided</scope>
+		</dependency>
 
         <!-- If you are using HAPI narrative generation, you will need to include Thymeleaf as well. Otherwise the following can be omitted. -->
         <dependency>
@@ -304,8 +305,8 @@
         For some reason JavaDoc crashed during site generation unless we have this dependency
         -->
         <dependency>
-            <groupId>javax.interceptor</groupId>
-            <artifactId>javax.interceptor-api</artifactId>
+            <groupId>jakarta.interceptor</groupId>
+			<artifactId>jakarta.interceptor-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -333,8 +334,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${spring_boot_version}</version>
-        </dependency>
-
+        </dependency>        
         <!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-core -->
         <dependency>
             <groupId>io.micrometer</groupId>
@@ -437,7 +437,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <release>11</release>
+                    <release>17</release>
                 </configuration>
             </plugin>
 

@@ -23,7 +23,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <logback-classic.version>1.2.11</logback-classic.version>
+        <logback-classic.version>1.4.7</logback-classic.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <start-class>ca.uhn.fhir.jpa.starter.Application</start-class>
     </properties>
@@ -49,7 +49,7 @@
             <dependency>
                 <groupId>org.glassfish.jaxb</groupId>
                 <artifactId>jaxb-runtime</artifactId>
-                <version>2.3.8</version>
+                <version>${jaxb_runtime_version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -386,11 +386,11 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
+        <!-- <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j-api.version}</version>
-        </dependency>
+        </dependency> -->
 
         <dependency>
             <groupId>ch.qos.logback</groupId>

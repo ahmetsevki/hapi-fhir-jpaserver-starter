@@ -241,8 +241,34 @@ public class StarterJpaConfig {
 	}
 
 	@Bean
-	public RestfulServer restfulServer(IFhirSystemDao<?, ?> fhirSystemDao, AppProperties appProperties, DaoRegistry daoRegistry, Optional<MdmProviderLoader> mdmProviderProvider, IJpaSystemProvider jpaSystemProvider, ResourceProviderFactory resourceProviderFactory, 
-	JpaStorageSettings jpaStorageSettings, ISearchParamRegistry searchParamRegistry, IValidationSupport theValidationSupport, DatabaseBackedPagingProvider databaseBackedPagingProvider, LoggingInterceptor loggingInterceptor, Optional<TerminologyUploaderProvider> terminologyUploaderProvider, Optional<SubscriptionTriggeringProvider> subscriptionTriggeringProvider, Optional<CorsInterceptor> corsInterceptor, IInterceptorBroadcaster interceptorBroadcaster, Optional<BinaryAccessProvider> binaryAccessProvider, BinaryStorageInterceptor binaryStorageInterceptor, IValidatorModule validatorModule, Optional<GraphQLProvider> graphQLProvider, BulkDataExportProvider bulkDataExportProvider, BulkDataImportProvider bulkDataImportProvider, ValueSetOperationProvider theValueSetOperationProvider, ReindexProvider reindexProvider, PartitionManagementProvider partitionManagementProvider, Optional<RepositoryValidatingInterceptor> repositoryValidatingInterceptor, IPackageInstallerSvc packageInstallerSvc, ThreadSafeResourceDeleterSvc theThreadSafeResourceDeleterSvc, ApplicationContext appContext, Optional<IpsOperationProvider> theIpsOperationProvider) {
+	public RestfulServer restfulServer(IFhirSystemDao<?, ?> fhirSystemDao,
+												  AppProperties appProperties,
+												  DaoRegistry daoRegistry,
+												  Optional<MdmProviderLoader> mdmProviderProvider,
+												  IJpaSystemProvider jpaSystemProvider,
+												  /** generated, current POC **/ResourceProviderFactory resourceProviderFactory,
+												  JpaStorageSettings jpaStorageSettings,
+												  ISearchParamRegistry searchParamRegistry,
+												  IValidationSupport theValidationSupport,
+												  DatabaseBackedPagingProvider databaseBackedPagingProvider,
+												  LoggingInterceptor loggingInterceptor,
+												  Optional<TerminologyUploaderProvider> terminologyUploaderProvider,
+												  Optional<SubscriptionTriggeringProvider> subscriptionTriggeringProvider,
+												  Optional<CorsInterceptor> corsInterceptor,
+												  IInterceptorBroadcaster interceptorBroadcaster,
+												  Optional<BinaryAccessProvider> binaryAccessProvider,
+												  BinaryStorageInterceptor binaryStorageInterceptor,
+												  IValidatorModule validatorModule,
+												  Optional<GraphQLProvider> graphQLProvider,
+												  BulkDataExportProvider bulkDataExportProvider,
+												  BulkDataImportProvider bulkDataImportProvider,
+												  ValueSetOperationProvider theValueSetOperationProvider,
+												  ReindexProvider reindexProvider, PartitionManagementProvider partitionManagementProvider,
+												  Optional<RepositoryValidatingInterceptor> repositoryValidatingInterceptor,
+												  IPackageInstallerSvc packageInstallerSvc,
+												  ThreadSafeResourceDeleterSvc theThreadSafeResourceDeleterSvc,
+												  ApplicationContext appContext,
+												  Optional<IpsOperationProvider> theIpsOperationProvider) {
 		RestfulServer fhirServer = new RestfulServer(fhirSystemDao.getContext());
 
 		List<String> supportedResourceTypes = appProperties.getSupported_resource_types();
